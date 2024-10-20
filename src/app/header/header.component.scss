@@ -1,0 +1,26 @@
+.header-container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    background-color: #f70a0abf;
+    align-items: center;
+    justify-content: space-between;
+    
+    .font-effect-neon{
+        font-size: 24px;
+        font-weight: bold;
+        font-family:cursive;
+        letter-spacing: 4px;
+        margin-left: 40px;
+        cursor: pointer;
+    }
+    .logout{
+        font-size: 18px;
+        font-weight: bold;
+        // font-family: 'creepster',cursive;
+        // letter-spacing: 4px;
+        margin-right: 40px;
+        cursor: pointer;
+
+    }
+}

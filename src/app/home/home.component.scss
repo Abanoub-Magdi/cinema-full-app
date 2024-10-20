@@ -1,0 +1,85 @@
+.home-container {
+    display: flex;
+
+    .all-movies {
+        width: 75%;
+        min-height: calc(100vh - 80px);
+        padding: 20px 40px;
+        border-right: 1px solid #0a02f3;
+
+        .top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .h4 {
+                font-weight: bold;
+                text-transform: uppercase;
+                border-left: 1px solid #ff0000;
+                padding-left: 10px;
+            }
+
+            .view-all {
+                color: #ff0000;
+                cursor: pointer;
+            }
+        }
+
+        .movies-thumbnail {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+
+            /* Space between thumbnails */
+            .movie {
+                .cover {
+                    img {
+                        padding-right: 5px;
+                    }
+                }
+
+                .details {
+                    .name {
+                        font-weight: bold;
+                        color: #000000;
+                    }
+
+                    .rating {
+                        color: #e00800;
+                        font-weight: bold;
+                    }
+                }
+
+                .movie {
+                    margin: 0px;
+                }
+
+                ngb-rating {
+                    font-size: 1.5rem;
+                    color: rgb(255, 25, 0);
+                }
+
+                p {
+                    font-weight: bold;
+                }
+
+
+            }
+        }
+
+        .movies-thumbnail>* {
+            width: 30%;
+            /* Keep it flexible for 3 items per row */
+            margin-bottom: 20px;
+            /* Add space between rows */
+        }
+    }
+
+    .popular-movies {
+        width: 25%;
+        min-height: calc(100vh - 80px);
+        padding: 20px 40px;
+        // border-right: 1px solid #0a02f3;
+    }
+}

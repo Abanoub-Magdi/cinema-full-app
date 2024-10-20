@@ -1,0 +1,19 @@
+<p>movie works!</p>
+<button class="btn btn-primary" (click)="open(content)">Launch Modal</button>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <p>Modal body content goes here.</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+
+<!-- //////////////////////////////////////////////////////////////////// -->
+

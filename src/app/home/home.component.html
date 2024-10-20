@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="home-container">
+    <div class="all-movies">
+        <div class="trending-movies">
+            <div class="top">
+                <h4>Trending Movies</h4>
+                <div class="view-all">View all</div>
+            </div>
+            <div class="movies-thumbnail">
+                <div class="movie" *ngFor="let movie of trendingMovies; let i = index">
+                    <div class="cover">
+                        <img [src]="movie.cover" alt="{{ movie.name }}">
+                    </div>
+                    <div class="details">
+                        <div class="name">{{ movie.name }}</div>
+
+                        <div class="rating">
+                            <app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
+                        </div>
+                    </div>
+
+                    <div class="rating-section">
+                        <ngb-rating [(rate)]="movie.currentRate" max="5" [readonly]="isRatingFinal[i]"></ngb-rating>
+                        <p>{{ movie.currentRate || 0 }} out of 5</p>
+                        <!-- <button (click)="finalizeRating(i)" [disabled]="isRatingFinal[i]">Submit Rating</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="theatre-movies">
+            <div class="top">
+                <h4>Popular in Theatres</h4>
+                <div class="view-all">View all</div>
+            </div>
+            <div class="movies-thumbnail">
+                <div class="movie" *ngFor="let movie of theatreMovies; let i = index">
+                    <div class="cover">
+                        <img [src]="movie.cover" alt="{{ movie.name }}">
+                    </div>
+                    <div class="details">
+                        <div class="name">{{ movie.name }}</div>
+
+                        <div class="rating">
+                            <app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
+                        </div>
+                    </div>
+
+                    <div class="rating-section">
+                        <ngb-rating [(rate)]="movie.currentRate" max="5" [readonly]="isRatingFinal[i]"></ngb-rating>
+                        <p>{{ movie.currentRate || 0 }} out of 5</p>
+                        <!-- <button (click)="finalizeRating(i)" [disabled]="isRatingFinal[i]">Submit Rating</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popular-movies"></div>
+    </div>
+</div>
