@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   trendingMovies: any;
   theatreMovies: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getTrendingMovies();
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
   getTheatreMovies() {
     this.http.get('assets/data/theatre-movies.json').subscribe((movies: any) => {
-      this.trendingMovies = movies;
+      this.theatreMovies = movies;
       this.isRatingFinal = new Array(this.trendingMovies.length).fill(false); // Initialize with false for each movie
       console.log(this.trendingMovies);
     });
@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
 
 
   finalizeRating(index: number) {
+    
     this.isRatingFinal[index] = true;  // Make the rating read-only for the specific movie
   }
 }

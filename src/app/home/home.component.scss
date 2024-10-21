@@ -1,25 +1,27 @@
 .home-container {
     display: flex;
+    background-color: #181818;
 
     .all-movies {
         width: 75%;
-        min-height: calc(100vh - 80px);
-        padding: 20px 40px;
-        border-right: 1px solid #0a02f3;
+        min-height: calc(100vh - 90px);
+        padding: 40px 20px;
+        border-right: 2px solid #ff0000;
 
         .top {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            .h4 {
+            h4 {
                 font-weight: bold;
                 text-transform: uppercase;
-                border-left: 1px solid #ff0000;
+                // border-left: 1px solid #ff0000;
+                color: white;
                 padding-left: 10px;
             }
 
-            .view-all {
+            view-all {
                 color: #ff0000;
                 cursor: pointer;
             }
@@ -29,7 +31,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            width: 80%;
+            padding-right: 5px;
+            background-repeat: 5px;
+            /* Space between movies */
 
             /* Space between thumbnails */
             .movie {
@@ -42,12 +48,15 @@
                 .details {
                     .name {
                         font-weight: bold;
-                        color: #000000;
+                        // color: #000000;
+                        color: white;
+
                     }
 
                     .rating {
-                        color: #e00800;
+                        color: #ffffff;
                         font-weight: bold;
+
                     }
                 }
 
@@ -62,6 +71,8 @@
 
                 p {
                     font-weight: bold;
+                    color: #ffffff;
+
                 }
 
 
@@ -73,6 +84,7 @@
             /* Keep it flexible for 3 items per row */
             margin-bottom: 20px;
             /* Add space between rows */
+
         }
     }
 
