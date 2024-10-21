@@ -1,16 +1,29 @@
+/*===============================
+=            Layout             =
+===============================*/
+
 .home-container {
     display: flex;
-    justify-content: space-between; /* Ensures sections are spread out */
-    background-color: #b33d3d;
-    width: 100%; /* Ensure the container spans the full width of the page */
+    justify-content: space-between;
+    /* Ensures sections are spread out */
+    // background-color: #b33d3d;
+    background-color: #181818;
+    width: 100%;
+    /* Ensure the container spans the full width of the page */
 }
 
+/*===============================
+=         All Movies Section     =
+===============================*/
+
 .all-movies {
-    width: 100%; /* Adjust width to ensure there's room for popular movies */
+    width: 100%;
+    /* Adjust width to ensure there's room for popular movies */
     min-height: calc(100vh - 90px);
     padding: 40px 20px;
     border-right: 2px solid #ff0000;
 
+    /* Top Section */
     .top {
         display: flex;
         align-items: center;
@@ -28,22 +41,43 @@
             cursor: pointer;
         }
     }
+////////////////////////////////////////////////////////////////////// 
+    
+/* Movies Thumbnail Section */
+.movies-thumbnail {
+    display: flex;
+    flex-wrap: wrap; // Allow items to wrap to the next line
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%; // Use full width for the container
+    padding-right: 5px;
+    margin: 5px;
 
-    .movies-thumbnail {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        width: 80%;
-        padding-right: 5px;
+    .movie {
+        flex: 0 1 calc(19%); // Set a flexible width for each movie item (5 items in a row)
+        margin: 5px; // Margin around each movie item
+        max-width: 150px; // Optional: set a max-width to control the overall size
 
-        .movie {
-            margin: 0;
+        .cover img {
+            width: 100%; // Ensure the image takes full width of the movie item
+            height: auto; // Maintain aspect ratio
+            max-height: 200px; // Set a max height for the images to control their size
+            transition: transform 0.3s ease; // Add smooth hover effects
+        }
 
-            .cover img {
-                padding-right: 5px;
-            }
+        .cover img:hover {
+            transform: scale(1.05); // Slight zoom-in effect on hover
+        }
 
+
+
+
+
+    // /////////////////////////////////////////
+    
+    
+
+            /* Movie Details */
             .details {
                 .name {
                     font-weight: bold;
@@ -68,24 +102,36 @@
         }
     }
 
-    .movies-thumbnail > * {
-        width: 30%; /* Ensure 3 items per row */
+    /* Thumbnail Items */
+    .movies-thumbnail>* {
+        width: 30%;
+        /* Ensure 3 items per row */
         margin-bottom: 20px;
     }
 }
 
+/*===============================
+=       Popular Movies Section   =
+===============================*/
+
 .popular-movies {
-    width: 25%; /* Take up the remaining 25% of the width */
+    width: 25%;
+    /* Take up the remaining 25% of the width */
     min-height: calc(100vh - 80px);
     padding: 20px 40px;
     font-family: "Roboto", sans-serif;
-    background-color: #f7f7f7; /* Optional background to make it stand out */
+    background-color: #000000;
+    color: #ffffff;
+    /* Optional background to make it stand out */
 
     h4 {
         text-transform: uppercase;
         font-weight: bold;
         border-left: 5px solid #ff9900;
         padding-left: 10px;
+        color: whitesmoke;
+
+
     }
 
     .movies {

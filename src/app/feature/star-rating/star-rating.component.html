@@ -1,13 +1,8 @@
-<p>star-rating works!</p>
-<p>Custom rating template provided as child element</p>
-
-<p>We use <code>bootstrap-icons</code> to display stars</p>
-
-<ngb-rating [(rate)]="rating">
-	<ng-template let-fill="fill" let-index="index">
-		<i class="bi-star{{ fill === 100 ? '-fill' : '' }}" [class.filled]="fill === 100" [class.low]="index < 3"></i>
-	</ng-template>
-</ngb-rating>
-
-<hr />
-<pre>Rate: <b>{{rating}}</b></pre>
+<div class="star-rating">
+	<i *ngFor="let filled of stars; let i = index"
+	   class="fa"
+	   [ngClass]="filled ? 'fa-star' : 'fa-star-o'"
+	   (click)="onStarClick(i)">
+	</i>
+  </div>
+  

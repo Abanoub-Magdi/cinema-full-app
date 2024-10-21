@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,9 @@ export class HomeComponent implements OnInit {
   isRatingFinal: boolean[] = []; // Array to track finalization for each movie
   trendingMovies: any;
   theatreMovies: any;
-  popularMovies:any;
+  popularMovies: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
     this.getTrendingMovies();
@@ -49,7 +50,12 @@ export class HomeComponent implements OnInit {
 
 
   finalizeRating(index: number) {
-    
+
     this.isRatingFinal[index] = true;  // Make the rating read-only for the specific movie
+  }
+
+
+  gotomovie(type: string, id: number) {
+    this.router.navigate(['movie', type, id]);
   }
 }

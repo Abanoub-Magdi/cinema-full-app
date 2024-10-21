@@ -8,15 +8,16 @@
             </div>
             <div class="movies-thumbnail">
                 <div class="movie" *ngFor="let movie of trendingMovies; let i = index">
-                    <div class="cover">
+                    <div class="cover" (click)="gotomovie('trending',movie.id)">
                         <img [src]="movie.cover" alt="{{ movie.name }}">
                     </div>
-                    <div class="details">
+                    <div class="details" (click)="gotomovie('trending',movie.id)">
                         <div class="name">{{ movie.name }}</div>
 
-                        <div class="rating">
+                        <!-- <div class="rating">
                             <app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
-                        </div>
+                        </div> -->
+
                     </div>
 
                     <div class="rating-section">
@@ -27,47 +28,44 @@
                 </div>
             </div>
         </div>
+        <hr>
+        <br>
+
         <div class="theatre-movies">
             <div class="top">
                 <h4>Popular in Theatres</h4>
                 <div class="view-all">View all</div>
             </div>
+
             <div class="movies-thumbnail">
                 <div class="movie" *ngFor="let movie of theatreMovies; let i = index">
-                    <div class="cover">
+                    <div class="cover" (click)="gotomovie('theatre',movie.id)">
                         <img [src]="movie.cover" alt="{{ movie.name }}">
                     </div>
-                    <div class="details">
+                    <div class="details" (click)="gotomovie('theatre',movie.id)">
                         <div class="name">{{ movie.name }}</div>
-
-                        <div class="rating">
-                            <app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
+                        <div class="rating-section">
+                            <ngb-rating [(rate)]="movie.currentRate" max="5" [readonly]="isRatingFinal[i]"></ngb-rating>
+                            <p>{{ movie.currentRate || 0 }} out of 5</p>
                         </div>
-                    </div>
-
-                    <div class="rating-section">
-                        <ngb-rating [(rate)]="movie.currentRate" max="5" [readonly]="isRatingFinal[i]"></ngb-rating>
-                        <p>{{ movie.currentRate || 0 }} out of 5</p>
-                        <!-- <button (click)="finalizeRating(i)" [disabled]="isRatingFinal[i]">Submit Rating</button> -->
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>
 
     <div class="popular-movies">
-        <h4>All Time Popular</h4>
+        <h4>Best Movie</h4>
         <div class="movies">
             <div class="movie" *ngFor="let movie of popularMovies">
-                <div class="name" (click)="goToMovie('popular', movie.id)">{{ movie.name }}</div>
+                <div class="name" (click)="gotomovie('popular',movie.id)">{{ movie.name }}</div>
                 <div class="rating">
                     <span class="rating-value">{{ movie.rating }}</span>
-                    <app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
+                    <!-- <app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating> -->
                 </div>
             </div>
             <div class="view-all">View all</div>
         </div>
-
     </div>
-</div>

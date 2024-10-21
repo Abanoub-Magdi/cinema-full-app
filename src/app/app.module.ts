@@ -10,6 +10,10 @@ import { MovieComponent } from './movie/movie.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; // Correct import
 import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+// import { SharedModule } from './feature/shared/shared.module';
+import { SharedModule } from './feature/shared/shared.module';
+import { StarRatingComponent } from './feature/star-rating/star-rating.component';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { NgbModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule, // Only this should be here
     NgbRatingModule,
     NgbModule,
+    SharedModule,
   ],
   providers: [
     provideClientHydration()
