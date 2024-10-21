@@ -1,97 +1,111 @@
 .home-container {
     display: flex;
-    background-color: #181818;
+    justify-content: space-between; /* Ensures sections are spread out */
+    background-color: #b33d3d;
+    width: 100%; /* Ensure the container spans the full width of the page */
+}
 
-    .all-movies {
-        width: 75%;
-        min-height: calc(100vh - 90px);
-        padding: 40px 20px;
-        border-right: 2px solid #ff0000;
+.all-movies {
+    width: 100%; /* Adjust width to ensure there's room for popular movies */
+    min-height: calc(100vh - 90px);
+    padding: 40px 20px;
+    border-right: 2px solid #ff0000;
 
-        .top {
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h4 {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            padding-left: 10px;
+        }
+
+        .view-all {
+            color: #ff0000;
+            cursor: pointer;
+        }
+    }
+
+    .movies-thumbnail {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 80%;
+        padding-right: 5px;
+
+        .movie {
+            margin: 0;
+
+            .cover img {
+                padding-right: 5px;
+            }
+
+            .details {
+                .name {
+                    font-weight: bold;
+                    color: white;
+                }
+
+                .rating {
+                    color: #ffffff;
+                    font-weight: bold;
+                }
+            }
+
+            ngb-rating {
+                font-size: 1.5rem;
+                color: rgb(255, 25, 0);
+            }
+
+            p {
+                font-weight: bold;
+                color: #ffffff;
+            }
+        }
+    }
+
+    .movies-thumbnail > * {
+        width: 30%; /* Ensure 3 items per row */
+        margin-bottom: 20px;
+    }
+}
+
+.popular-movies {
+    width: 25%; /* Take up the remaining 25% of the width */
+    min-height: calc(100vh - 80px);
+    padding: 20px 40px;
+    font-family: "Roboto", sans-serif;
+    background-color: #f7f7f7; /* Optional background to make it stand out */
+
+    h4 {
+        text-transform: uppercase;
+        font-weight: bold;
+        border-left: 5px solid #ff9900;
+        padding-left: 10px;
+    }
+
+    .movies {
+        .movie {
+            margin: 30px 0 20px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            h4 {
+            .name {
                 font-weight: bold;
-                text-transform: uppercase;
-                // border-left: 1px solid #ff0000;
-                color: white;
-                padding-left: 10px;
-            }
-
-            view-all {
-                color: #ff0000;
                 cursor: pointer;
             }
         }
 
-        .movies-thumbnail {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            width: 80%;
-            padding-right: 5px;
-            background-repeat: 5px;
-            /* Space between movies */
-
-            /* Space between thumbnails */
-            .movie {
-                .cover {
-                    img {
-                        padding-right: 5px;
-                    }
-                }
-
-                .details {
-                    .name {
-                        font-weight: bold;
-                        // color: #000000;
-                        color: white;
-
-                    }
-
-                    .rating {
-                        color: #ffffff;
-                        font-weight: bold;
-
-                    }
-                }
-
-                .movie {
-                    margin: 0px;
-                }
-
-                ngb-rating {
-                    font-size: 1.5rem;
-                    color: rgb(255, 25, 0);
-                }
-
-                p {
-                    font-weight: bold;
-                    color: #ffffff;
-
-                }
-
-
-            }
+        .view-all {
+            color: #ff9900;
+            text-align: right;
+            margin-top: 30px;
+            cursor: pointer;
         }
-
-        .movies-thumbnail>* {
-            width: 30%;
-            /* Keep it flexible for 3 items per row */
-            margin-bottom: 20px;
-            /* Add space between rows */
-
-        }
-    }
-
-    .popular-movies {
-        width: 25%;
-        min-height: calc(100vh - 80px);
-        padding: 20px 40px;
-        // border-right: 1px solid #0a02f3;
     }
 }
