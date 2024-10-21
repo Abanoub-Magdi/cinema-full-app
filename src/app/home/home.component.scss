@@ -57,12 +57,15 @@
         flex: 0 1 calc(19%); // Set a flexible width for each movie item (5 items in a row)
         margin: 5px; // Margin around each movie item
         max-width: 150px; // Optional: set a max-width to control the overall size
+        
 
         .cover img {
             width: 100%; // Ensure the image takes full width of the movie item
             height: auto; // Maintain aspect ratio
             max-height: 200px; // Set a max height for the images to control their size
             transition: transform 0.3s ease; // Add smooth hover effects
+            // border-radius: .2rem;
+
         }
 
         .cover img:hover {
