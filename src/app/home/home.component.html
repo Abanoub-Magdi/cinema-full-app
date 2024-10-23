@@ -44,10 +44,11 @@
                     </div>
                     <div class="details" (click)="gotomovie('theatre',movie.id)">
                         <div class="name">{{ movie.name }}</div>
-                        <div class="rating-section">
-                            <ngb-rating [(rate)]="movie.currentRate" max="5" [readonly]="isRatingFinal[i]"></ngb-rating>
-                            <p>{{ movie.currentRate || 0 }} out of 5</p>
-                        </div>
+                    </div>
+                    <div class="rating-section">
+                        <ngb-rating [(rate)]="movie.currentRate" max="5" [readonly]="isRatingFinal[i]"></ngb-rating>
+                        <p>{{ movie.currentRate || 0 }} out of 5</p>
+                        <!-- <button (click)="finalizeRating(i)" [disabled]="isRatingFinal[i]">Submit Rating</button> -->
                     </div>
                 </div>
             </div>

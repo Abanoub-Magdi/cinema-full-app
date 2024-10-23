@@ -15,7 +15,10 @@ export class MovieComponent implements OnInit {
   url = '';
   movies: any;
   movie: any;
-  
+
+  name = '';
+  rating = '';
+
   constructor(private modalService: NgbModal, private route: ActivatedRoute, private http: HttpClient) { }
 
   open(content: any) {
