@@ -1,27 +1,152 @@
-# MoviesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+# Movie Rating Platform
 
-## Development server
+A modern, Movie rating platform built with **Angular**. The application allows users to view trending, theater, and popular movies, and rate them using a dynamic, reusable star rating component. It includes a dark theme, responsive layout, and JSON-based movie data.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Table of Contents
 
-## Code scaffolding
+- [Demo](#demo)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Star Rating Component](#star-rating-component)
+- [Movie Data (JSON)](#movie-data-json)
+- [Technologies](#technologies)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- ## Demo
 
-## Build
+[ live demo for project] -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Running unit tests
+- **Responsive design** with a modern dark theme.
+- **Star rating component**: A reusable star rating component used for movie ratings across the platform.
+- **Trending, Theater, and Popular Movies**: Movie data is fetched from local JSON files.
+- **Dynamic Rating System**: Users can submit ratings, and finalized ratings are made read-only.
+- **Reusable components**: Modular components for flexibility and maintainability.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+To get started with the project, follow these steps:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/movie-rating-platform.git
+   cd movie-rating-platform
+   ```
 
-## Further help
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. **Run the development server**:
+   ```bash
+   ng serve
+   ```
+
+4. **Open the application in your browser**:
+   Navigate to `http://localhost:4200/` to see the app in action.
+
+## Usage
+
+Once you’ve installed and run the project:
+
+1. Browse through **Trending**, **Theater**, and **Popular** movies.
+2. View the movie details, including the rating, cover image, and description.
+3. Use the **star rating component** to rate movies dynamically.
+4. Finalize ratings to lock them for specific movies.
+
+## Star Rating Component
+
+The star rating component is designed to be reusable and can be added anywhere in the application. Here’s how you can use it in your project:
+
+### Example usage in a template:
+
+```html
+<app-star-rating [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
+```
+
+### Component Inputs:
+- `rating`: The current rating for the movie.
+- `isReadOnly`: A boolean to lock or unlock the rating functionality.
+
+### Styling:
+The component is styled with a modern dark theme and can be customized via SCSS.
+
+## Movie Data (JSON)
+
+Movie data is sourced from local JSON files stored in the `assets/data/` folder. Each JSON file contains structured data for trending, theater, and popular movies. This setup makes it easy to update or replace the movie data as needed.
+
+Example movie data format (`trending-movies.json`):
+
+```json
+[
+  {
+    "id": 1,
+    "title": "Movie Title",
+    "rating": 4.5,
+    "cover": "assets/images/movie-cover.jpg",
+    "description": "Movie description here..."
+  },
+  {
+    "id": 2,
+    "title": "Another Movie",
+    "rating": 3.8,
+    "cover": "assets/images/another-movie-cover.jpg",
+    "description": "Another movie description..."
+  }
+]
+```
+
+### Files:
+- `trending-movies.json`
+- `theatre-movies.json`
+- `popular-movies.json`
+
+These files are fetched locally using Angular's `HttpClient` and parsed into the application.
+
+## Technologies
+
+This project leverages the following technologies:
+
+- **Angular** (Version X)
+- **TypeScript**
+- **Bootstrap** (For UI components)
+- **SCSS** (For styling)
+- **RxJS** (For handling asynchronous data)
+- **Angular Router** (For navigation)
+- **Local JSON** files for movie data
+
+## Folder Structure
+
+Here’s an overview of the folder structure for this project:
+
+```
+movie-rating-platform/
+├── src/
+│   ├── app/
+│   │   ├── components/        # Reusable components like the Star Rating component
+│   │   ├── services/          # Services for fetching movie data from JSON files
+│   │   ├── pages/             # Pages like Home, Movie Details, etc.
+│   │   ├── app.component.ts   # Main component
+│   │   ├── app.module.ts      # Root module
+│   └── assets/                # Static assets like images, JSON files
+│       └── data/              # JSON files containing movie data
+├── README.md                  # This README file
+├── package.json               # Dependencies and scripts
+└── angular.json               # Angular configuration
+```
+
+## Contributing
+
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes and commit them with a clear message.
+4. Push to your branch and create a Pull Request.
+
